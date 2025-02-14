@@ -72,18 +72,23 @@ cd your-repo-name
    ```bash
    docker compose --env-file .env.prod -f docker-compose.prod.yml build
    ```
-
 2. Start the containers in detached mode:
    ```bash
    docker compose --env-file .env.prod -f docker-compose.prod.yml up -d
    ```
-
-3. Apply database migrations:
+3. Установите зависимости Python из файла `requirements.txt`:
+   ```bash
+   docker compose --env-file .env.prod -f docker-compose.prod.yml exec web pip install -r requirements.txt
+   ```
+4. Apply database migrations:
    ```bash
    docker compose --env-file .env.prod -f docker-compose.prod.yml exec web python manage.py migrate
    ```
-
-4. (Optional) Create a superuser for the Django admin panel:
+5. (Optional) Create a superuser for the Django admin panel:
+   ```bash
+   docker compose --env-file .env.prod -f docker-compose.prod.yml exec web python manage.py collectstatic
+   ```
+6. (Optional) Create a superuser for the Django admin panel:
    ```bash
    docker compose --env-file .env.prod -f docker-compose.prod.yml exec web python manage.py createsuperuser
    ```
