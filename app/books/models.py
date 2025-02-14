@@ -7,6 +7,7 @@ class Book(models.Model):
     price = models.PositiveIntegerField(verbose_name=_('Price'), default=0)
     read = models.BooleanField(verbose_name=_('Read'), default=False)
 
+
     def __str__(self):
         return self.title
     
