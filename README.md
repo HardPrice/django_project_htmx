@@ -1,4 +1,3 @@
-Got it! I've updated the `README.md` to reflect the new directory structure and the provided `.env.prod` example. Here's the revised version:
 
 ---
 
@@ -190,4 +189,3 @@ Enjoy building with Django, HTMX, and Docker! 🚀
 
 ---
 
-This updated `README.md` now reflects the new directory structure and the provided `.env.prod` example. Let me know if you need further adjustments! 😊
